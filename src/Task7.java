@@ -5,12 +5,10 @@ public class Task7 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");
         int n = scanner.nextInt();
-
         System.out.print("Enter the elements: ");
         System.out.print("Output: ");
         reverseOutput(n, scanner);
         System.out.println();
-
         scanner.close();
     }
 
