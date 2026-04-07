@@ -29,12 +29,10 @@ class Mylinkedlist {
     Queue<String> billQueue = new LinkedList<>();
     Queue<BankAccount> accountRequests = new LinkedList<>();
 
-    // --- Linked List Methods (Account Storage) ---
-
     void registerAccount(BankAccount account) {
         if (account == null) return;
-        account.next = head; // Link new node to current head
-        head = account;      // Move head to new node
+        account.next = head;
+        head = account;
         System.out.println("System: Account for " + account.username + " is now LIVE.");
     }
 
@@ -62,8 +60,6 @@ class Mylinkedlist {
         }
         System.out.println("Search Error: User not found.");
     }
-
-    // --- Transaction Methods (With Stack History) ---
 
     void addFunds(String name, int amount) {
         BankAccount current = head;
@@ -104,8 +100,6 @@ class Mylinkedlist {
             System.out.println("No actions to revert.");
         }
     }
-
-    // --- Queue Methods (Bills & Requests) ---
 
     void enqueueBill(String billType) {
         billQueue.add(billType);
@@ -182,7 +176,7 @@ class Main {
                 sys.addFunds(dn, da);
                 break;
             case 3:
-                System.out.print("Bill Type (e.g., Electric, Water): ");
+                System.out.print("Bill Type: ");
                 sys.enqueueBill(sc.next());
                 break;
             case 4:
