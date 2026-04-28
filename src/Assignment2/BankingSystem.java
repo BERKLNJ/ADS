@@ -33,7 +33,6 @@ class Mylinkedlist {
         if (account == null) return;
         account.next = head;
         head = account;
-        System.out.println("System: Account for " + account.username + " is now LIVE.");
     }
 
     void listAllRecords() {
@@ -133,6 +132,7 @@ class Mylinkedlist {
     void approveAccount() {
         if (!accountRequests.isEmpty()) {
             registerAccount(accountRequests.poll());
+            System.out.println("Account approved and activated.");
         } else {
             System.out.println("No pending requests.");
         }
@@ -143,6 +143,10 @@ class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Mylinkedlist bankSystem = new Mylinkedlist();
+
+        bankSystem.registerAccount(new BankAccount(101, "John", 5000));
+        bankSystem.registerAccount(new BankAccount(102, "Jane", 7500));
+        bankSystem.registerAccount(new BankAccount(103, "Alice", 1200));
 
         while (true) {
             System.out.println("\n--- BANKING HUB ---");
