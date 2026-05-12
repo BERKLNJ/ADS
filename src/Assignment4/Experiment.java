@@ -18,5 +18,4 @@ public class Experiment {
         System.out.println("DFS Time: " + (endDfs - startDfs) + " ns");
     }
 
-    // This would be called by Main to automate tests on 10, 30, 100 nodes [cite: 75]
 }

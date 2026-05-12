@@ -16,7 +16,6 @@ public class Graph {
     }
 
     public void addEdge(int from, int to) {
-        // Directed edge; for undirected, add both directions [cite: 63]
         if (adjList.containsKey(from) && adjList.containsKey(to)) {
             adjList.get(from).add(to);
         }
@@ -28,7 +27,6 @@ public class Graph {
         }
     }
 
-    // Breadth-First Search Implementation [cite: 41]
     public void bfs(int start) {
         if (!vertices.containsKey(start)) return;
 
@@ -40,7 +38,7 @@ public class Graph {
 
         while (!queue.isEmpty()) {
             int current = queue.poll();
-            System.out.print(current + " "); // Printing for traversal order [cite: 71]
+            System.out.print(current + " ");
 
             for (int neighbor : adjList.get(current)) {
                 if (!visited.contains(neighbor)) {
@@ -51,7 +49,6 @@ public class Graph {
         }
     }
 
-    // Depth-First Search Implementation [cite: 42]
     public void dfs(int start) {
         if (!vertices.containsKey(start)) return;
         Set<Integer> visited = new HashSet<>();

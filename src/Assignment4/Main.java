@@ -2,11 +2,11 @@ package Assignment4;
 
 public class Main {
     public static void main(String[] args) {
-        int[] sizes = {10, 30, 100}; // Required sizes [cite: 75]
+        int[] sizes = {10, 30, 100};
         Experiment experiment = new Experiment();
 
         for (int size : sizes) {
-            System.out.println("\n--- Testing Graph Size: " + size + " ---");
+            System.out.println("\nTesting Graph Size: " + size + " ");
             Graph g = new Graph();
 
             for (int i = 0; i < size; i++) {
